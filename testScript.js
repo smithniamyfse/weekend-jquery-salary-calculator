@@ -42,8 +42,6 @@ let employeeRoster = [];
 //  Assemble individual employee salary data into a single array
 let compileSalaries = [];
 
-// Initial total
-let initialTotal = Number($('#monthly-total').text());
 
 // When the HTML document (DOM) has loaded, call the onReady function
 $(document).ready(onReady);
@@ -55,6 +53,7 @@ function onReady(){
 // Event Listener for when the submit button is triggered by user
 $('#submit-button').on('click', onSubmitEmployeeData);
 $('#submit-button').on('click', calculateMonthlyTotal);
+
 
 // Event Listener for when the delete button is triggered by user
 $('#employee-roster-table').on('click', '.delete', onDeleteEmployee);
@@ -92,17 +91,20 @@ function onSubmitEmployeeData(event) {
 
 
 function calculateMonthlyTotal() {
-    let sums = 0;
+    let monthlySum = 0;
     for(let i = 0; i < compileSalaries.length; i++) {
-        sums += compileSalaries[i];
+        monthlySum += compileSalaries[i];
     }
-    console.log('THe SUM is ', Number(sums)); 
+    console.log('THe SUM is ', Number(monthlySum)); 
+    if(monthlySum > 20000) {
+        $('#monthly-total').addClass("red-background");
+    }
 
 // append sum to monthly-total
 
 $('#monthly-total').html(`
 <div>
-${sums}
+${monthlySum}
 </div>
 `); 
 
@@ -116,8 +118,12 @@ function onDeleteEmployee() {
         // Then remove the parent element
     $(this).parent().parent().remove();
 
-    if ($(this).parent().parent().remove()) {
-        employeeRoster.pop(employee);}
+    // if ($(this).parent().parent().remove()){
+    //     employeeRoster.pop(employee);
+    //     compileSalaries.pop(employee.annualSalary);}
+
+    // if ($(this).parent().parent().remove()) {
+    //     employeeRoster.pop(employee);}
 
     console.log('Checking employee roster AFTER DELETE: ', employeeRoster);
 

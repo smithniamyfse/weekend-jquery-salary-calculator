@@ -24,15 +24,6 @@ JQUERY SALARY CALCULATOR AGENDA
 
 */
 
-// todo CSS Manipulation: for color
-// .addClass(class-name-parameter): Adds a CSS class to selected element (or elements).
-
-// .removeClass(class-name-parameter): Removes a CSS class from selected element (or elements).
-
-// .toggleClass(class-name-parameter): Toggles a CSS class on selected element (or elements).
-
-
-
 // Declare global variable(s)
     // Variables can be accessed from anywhere in the program
 
@@ -53,6 +44,7 @@ function onReady(){
 // Event Listener for when the submit button is triggered by user
 $('#submit-button').on('click', onSubmitEmployeeData);
 $('#submit-button').on('click', calculateMonthlyTotal);
+// ? $('#submit-button').on('click', checkIfNumber);
 
 
 // Event Listener for when the delete button is triggered by user
@@ -75,6 +67,7 @@ function onSubmitEmployeeData(event) {
         jobTitle: $('#job-title').val(),
         annualSalary: Number($('#annual-salary').val())
     };
+    
 
     // Add the new employee object to the employeeRoster array
     employeeRoster.push(employee);
@@ -89,13 +82,27 @@ function onSubmitEmployeeData(event) {
 
 } // end onSubmitEmployeeData
 
+// ? function checkIfNumber() {
+//     var val = $('#annual-salary').val();
+//     var check = $.isNumeric(val);
+//     if (check) {
+//         $('#annual-salary').html("The Value " + "<b>" + val + "</b>"+ " is Numeric");
+//         }
+//         else {
+//         $("#annual-salary").html("The Value " + "<b>" + val + "</b>"+ " is not Numeric");
+//         }
+//         console.log('in Check if number: ' );
+        
+// } // end checkIfNumber
+
+
 
 function calculateMonthlyTotal() {
     let monthlySum = 0;
     for(let i = 0; i < compileSalaries.length; i++) {
         monthlySum += compileSalaries[i];
         if(monthlySum > 20000) {
-            $('.monthly-total-row').addClass("red-background");
+            $('#monthly-total-container').addClass("red-background");
         }
     }
     console.log('THe SUM is ', Number(monthlySum));
@@ -142,7 +149,7 @@ function render() {
                 <td>${employee.idNumber}</td>
                 <td>${employee.jobTitle}</td>
                 <td>${employee.annualSalary}</td>
-                <td><button class="delete">Delete</button></td>
+                <td><button class="delete">❌ Delete</button></td>
             </tr>
         `);
     

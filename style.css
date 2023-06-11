@@ -1,5 +1,51 @@
-.red-background {
-    background-color: red;
+/* FORM ELEMENTS */
+body {
+  font-family: 'Rock Salt', cursive;
+  font-family: 'Ubuntu', sans-serif;
+}
+
+.title-header {
+  padding: 10px;
+  margin: 5px;
+  background-color: #ccdcdd;
+  text-align: center;
+}
+input {
+  padding: .5em;
+  margin:10px 0; 
+  width: 150px;
+  background: #FCFCFC;
+  border: 1px solid;
+  box-shadow:0 0 10px 4px rgba(0,0,0,0.06);
+  font-size: medium;
+}
+
+fieldset {
+  background-color: navajowhite;
+}
+
+legend {
+  font-size: x-large;
+}
+
+#submit-button {
+  background-color: #DBF9DB;
+  padding: .5em;
+  width: 100px;
+  float: right; 
+  font-size: medium;
+}
+
+.employees-header {
+  font-size: x-large;
+}
+
+.delete {
+  background-color: #FBCFCD;
+  padding: .5em;
+  width: 100px;
+  float: right; 
+  font-size: medium;
 }
 
 /* TABLE */
@@ -15,22 +61,35 @@ table {
   th, td {
     padding: .5em;
     min-width: 3.5em;
+    font-size: large;
   }
   thead {
     background: #7a7a7a;
     color: #fcfcfc;
+    font-size: large;
   }
   tbody tr:nth-child(odd){ 
     background: #fcfcfc;
+    font-size: large;
   }
   tbody tr:nth-child(even){
     background: #dcdcdc;
+    font-size: large;
   }
   tfoot {
-    background: #bdbdbd;
+    background: #ccdcdd;
   }
 
-  #monthly-total-row, #monthly-total {
+/* MONTHLY TOTAL CONTAINER */
+#monthly-total-container, #monthly-total-row, #monthly-total {
+    height: 100%;
     width: auto;
     float: right;
+    font-size: x-large
   }
+
+/* OVER 20K RED BG */
+.red-background {
+  background-color: red;
+  /* text-shadow: 2px 2px 5px red; */
+}

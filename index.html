@@ -4,6 +4,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Rock+Salt&family=Ubuntu:wght@300&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
     <script src="jquery-3.7.0.js"></script>
     <script src="testScript.js"></script>
@@ -11,13 +14,12 @@
 </head>
 
 <body>
-    <header>
-        <h1>Salary Calculator</h1>
+    <header class="title-header">
+        <h1 class="title-header">Salary Calculator</h1>
     </header>
 
     <main>
         <section>
-            <h3>Add Employee</h3>
             <form>
                 <fieldset>
                     <legend>Add Employee</legend>
@@ -42,7 +44,7 @@
                     type="text" 
                     id="annual-salary">
                     <p>
-                        <button id="submit-button">Submit</button>
+                        <button id="submit-button">✅ Submit</button>
                     </p>
                 </fieldset>
             </form>
@@ -50,7 +52,7 @@
 
 
         <section>
-            <h3>Employees</h3>
+            <h3 class="employees-header">Employees</h3>
             <table>
                 <thead>
                     <tr>
@@ -73,9 +75,11 @@
                 </tfoot>
             </table>
         </section>
+
+        <section id="monthly-total-container">
             <div id="monthly-total-row">Monthly Total:&nbsp;
                 <div id="monthly-total"></div>
-            </div>
+            </section>
     </main>
 
 </body>

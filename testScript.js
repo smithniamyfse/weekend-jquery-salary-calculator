@@ -42,6 +42,8 @@ let employeeRoster = [];
 //  Assemble individual employee salary data into a single array
 let compileSalaries = [];
 
+// Initial total
+let initialTotal = Number($('#monthly-total').text());
 
 // When the HTML document (DOM) has loaded, call the onReady function
 $(document).ready(onReady);
@@ -90,20 +92,21 @@ function onSubmitEmployeeData(event) {
 
 
 function calculateMonthlyTotal() {
-    let sum = 0;
+    let sums = 0;
     for(let i = 0; i < compileSalaries.length; i++) {
-        sum += compileSalaries[i];
+        sums += compileSalaries[i];
     }
-    console.log('THe sum is ', Number(sum)); 
+    console.log('THe SUM is ', Number(sums)); 
+
 // append sum to monthly-total
-$('#monthly-total').append(`
+
+$('#monthly-total').html(`
 <div>
-${sum}
+${sums}
 </div>
 `); 
 
 } // end calculateMonthlyTotal
-
 
 function onDeleteEmployee() {
     // Remove employee from table

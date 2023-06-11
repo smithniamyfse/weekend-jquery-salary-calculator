@@ -24,14 +24,23 @@ JQUERY SALARY CALCULATOR AGENDA
 
 */
 
+// todo CSS Manipulation: for color
+// .addClass(class-name-parameter): Adds a CSS class to selected element (or elements).
+
+// .removeClass(class-name-parameter): Removes a CSS class from selected element (or elements).
+
+// .toggleClass(class-name-parameter): Toggles a CSS class on selected element (or elements).
+
+
+
 // Declare global variable(s)
     // Variables can be accessed from anywhere in the program
 
-// Track employee data - Do I need an array to collect all employee data?
+// Collect employee data in an array
 let employeeRoster = [];
 
-// ? Assemble individual employee salary data into a single array
-// ? let compileSalaries = [];
+//  Assemble individual employee salary data into a single array
+let compileSalaries = [];
 
 
 // When the HTML document (DOM) has loaded, call the onReady function
@@ -43,6 +52,7 @@ function onReady(){
 
 // Event Listener for when the submit button is triggered by user
 $('#submit-button').on('click', onSubmitEmployeeData);
+$('#submit-button').on('click', calculateMonthlyTotal);
 
 // Event Listener for when the delete button is triggered by user
 $('#employee-roster-table').on('click', '.delete', onDeleteEmployee);
@@ -62,18 +72,37 @@ function onSubmitEmployeeData(event) {
         lastName: $('#last-name').val(),
         idNumber: $('#id-number').val(),
         jobTitle: $('#job-title').val(),
-        annualSalary: $('#annual-salary').val()
+        annualSalary: Number($('#annual-salary').val())
     };
 
     // Add the new employee object to the employeeRoster array
     employeeRoster.push(employee);
-
     console.log('Checking employee roster ON ADD: ', employeeRoster);
+
+    // Add the new annual salary object to the compileSalaries array
+    compileSalaries.push(employee.annualSalary);
+    console.log('Checking compile salary array ON ADD: ', compileSalaries);
 
         // Render the posts array
         render();
 
 } // end onSubmitEmployeeData
+
+
+function calculateMonthlyTotal() {
+    let sum = 0;
+    for(let i = 0; i < compileSalaries.length; i++) {
+        sum += compileSalaries[i];
+    }
+    console.log('THe sum is ', Number(sum)); 
+// append sum to monthly-total
+$('#monthly-total').append(`
+<div>
+${sum}
+</div>
+`); 
+
+} // end calculateMonthlyTotal
 
 
 function onDeleteEmployee() {

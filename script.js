@@ -94,21 +94,21 @@ function render() {
 
 
 
-// // User will input data into the five fields  into affirmation and author fields then, once submit button is clicked, 
-//   // input will be added to affirmations table
-// // - Note: Be sure to delete the hardcoded table rows from index.html once you have this part working.
+// User will input data into the five fields  into affirmation and author fields then, once submit button is clicked, 
+  // input will be added to affirmations table
+// - Note: Be sure to delete the hardcoded table rows from index.html once you have this part working.
 // function onSubmitEmployeeData(event){
-//     // Disable default actions of submit button
+    // Disable default actions of submit button
 //     event.preventDefault();
 //     console.log('in affirmation');
-//     // Grab value of input fields
+    // Grab value of input fields
 //     let affirmationInputValue = $('#affirmation-input').val();
 //     console.log('affirmationInputValue is:', affirmationInputValue);
   
 //     let authorInputValue = $('#author-input').val();
 //     console.log('authorInputValue is:', authorInputValue);
   
-//     // Append input values into table
+    // Append input values into table
 //     $('#table-body').append(`
 //         <tr>  
 //           <td>${affirmationInputValue}</td>
@@ -117,7 +117,7 @@ function render() {
 //         </tr>
 //     `)
   
-//     // clear form
+    // clear form
 //     $('#affirmation-input').val('');
 //     $('#author-input').val('');
 

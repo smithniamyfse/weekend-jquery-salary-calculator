@@ -51,8 +51,7 @@ $('#employee-roster-table').on('click', '.delete', onDeleteEmployee);
 } // end onReady
 
 
-
-// Event handler
+// Event handler - input data field
 function onSubmitEmployeeData(event) {
     // Override and disable default form behavior
     event.preventDefault();
@@ -108,48 +107,3 @@ function onDeleteEmployee() {
 } // end onDeleteEmployee
 
 
-// function render() {
-//     // Render posts
-//     $('#employee-roster-table').empty();
-//     for (employee of employeeRoster) {
-//         $('#employee-roster-table').append(`
-//             <tr>
-//                 <td>${employee.firstName}</td>
-//                 <td>${employee.lastName}</td>
-//                 <td>${employee.idNumber}</td>
-//                 <td>${employee.jobTitle}</td>
-//                 <td>${employee.annualSalary}</td>
-//                 <td><button class="delete">Delete</button></td>
-//             </tr>
-//         `);
-//     }
-// }
-
-// User will input data into the five fields  into affirmation and author fields then, once submit button is clicked, 
-  // input will be added to affirmations table
-// - Note: Be sure to delete the hardcoded table rows from index.html once you have this part working.
-// function onSubmitEmployeeData(event){
-    // Disable default actions of submit button
-//     event.preventDefault();
-//     console.log('in affirmation');
-    // Grab value of input fields
-//     let affirmationInputValue = $('#affirmation-input').val();
-//     console.log('affirmationInputValue is:', affirmationInputValue);
-  
-//     let authorInputValue = $('#author-input').val();
-//     console.log('authorInputValue is:', authorInputValue);
-  
-    // Append input values into table
-//     $('#table-body').append(`
-//         <tr>  
-//           <td>${affirmationInputValue}</td>
-//           <td>${authorInputValue}</td>
-//           <td><button class="delete">❌</button></td>
-//         </tr>
-//     `)
-  
-    // clear form
-//     $('#affirmation-input').val('');
-//     $('#author-input').val('');
-
-//   }

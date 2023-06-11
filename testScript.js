@@ -94,17 +94,19 @@ function calculateMonthlyTotal() {
     let monthlySum = 0;
     for(let i = 0; i < compileSalaries.length; i++) {
         monthlySum += compileSalaries[i];
+        if(monthlySum > 20000) {
+            $('.monthly-total-row').addClass("red-background");
+        }
     }
-    console.log('THe SUM is ', Number(monthlySum)); 
-    if(monthlySum > 20000) {
-        $('#monthly-total').addClass("red-background");
-    }
+    console.log('THe SUM is ', Number(monthlySum));
+
+    
 
 // append sum to monthly-total
 
 $('#monthly-total').html(`
 <div>
-${monthlySum}
+${monthlySum.toLocaleString("en-US", {style:"currency", currency:"USD"})}
 </div>
 `); 
 

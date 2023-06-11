@@ -26,3 +26,11 @@ table {
   tbody tr:nth-child(even){
     background: #dcdcdc;
   }
+  tfoot {
+    background: #bdbdbd;
+  }
+
+  #monthly-total-row, #monthly-total {
+    width: auto;
+    float: right;
+  }

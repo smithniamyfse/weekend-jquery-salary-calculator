@@ -44,12 +44,18 @@ function onReady(){
 // Event Listener for when the submit button is triggered by user
 $('#submit-button').on('click', onSubmitEmployeeData);
 
+// Event Listener for when the delete button is triggered by user
+$('#employee-roster-table').on('click', '.delete', deleteEmployee);
+
+
 } // end onReady
 
 
 
 // Event handler
-function onSubmitEmployeeData() {
+function onSubmitEmployeeData(event) {
+    // Override and disable default form behavior
+    event.preventDefault();
     // Get the data from the <input> elements
     // and create a "post" object
     let employee = {
@@ -70,9 +76,9 @@ function onSubmitEmployeeData() {
 
 function render() {
     // Render posts
-    $('#postsTable').empty();
-    for (let employee of employeeRoster) {
-        $('#postsTable').append(`
+    $('#employee-roster-table').empty();
+    for (employee of employeeRoster) {
+        $('#employee-roster-table').append(`
             <tr>
                 <td>${employee.firstName}</td>
                 <td>${employee.lastName}</td>
@@ -82,17 +88,7 @@ function render() {
             </tr>
         `);
     }
-
-    // Render "dark mode"
-    if (isDarkMode) {
-        $('body').addClass('dark-mode');
-    }
-    else {
-        $('body').removeClass('dark-mode');
-    }
 }
-
-
 
 // User will input data into the five fields  into affirmation and author fields then, once submit button is clicked, 
   // input will be added to affirmations table

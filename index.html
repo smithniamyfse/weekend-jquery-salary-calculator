@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -18,29 +19,59 @@
         <section>
             <h3>Add Employee</h3>
             <form>
-                <input 
-                placeholder="First Name"
-                type="text"
-                id="first-name">
-                <input 
-                placeholder="Last Name"
-                type="text"
-                id="last-name">
-                <input 
-                placeholder="ID"
-                type="text"
-                id="id-number">
-                <input 
-                placeholder="Title"
-                type="text"
-                id="job-title">
-                <input 
-                placeholder="Annual Salary"
-                type="text"
-                id="annual-salary">
+                <fieldset>
+                    <legend>Add Employee</legend>
+                    <input 
+                    placeholder="First Name" 
+                    type="text" 
+                    id="first-name">
+                    <input 
+                    placeholder="Last Name" 
+                    type="text" 
+                    id="last-name">
+                    <input 
+                    placeholder="ID" 
+                    type="text" 
+                    id="id-number">
+                    <input 
+                    placeholder="Title" 
+                    type="text" 
+                    id="job-title">
+                    <input 
+                    placeholder="Annual Salary" 
+                    type="text" 
+                    id="annual-salary">
+                    <p>
+                        <button id="submit-button">Submit</button>
+                    </p>
+                </fieldset>
             </form>
         </section>
+
+
+        <section>
+            <h3>Employees</h3>
+            <table>
+                <thead>
+                    <tr>
+                        <th>First Name</th>
+                        <th>Last Name</th>
+                        <th>ID</th>
+                        <th>Title</th>
+                        <th>Annual Salary</th>
+                        <th></th>
+                    </tr>
+                </thead>
+                <tbody id="employee-roster-table">
+                    <!-- Table rows will be added here -->
+
+                </tbody>
+
+            </table>
+
+        </section>
     </main>
-    
+
 </body>
+
 </html>
